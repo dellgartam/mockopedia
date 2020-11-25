@@ -1,0 +1,19 @@
+%h1 Shop List
+%button
+    - if current_user.shop.present?
+        = link_to 'Your Shop', shop_path(current_user.shop)
+    - else
+        = link_to 'Create Your Shop', new_shop_path
+%br
+%table
+    %thead
+        %th Name
+        %th Address
+        %th Phone Number
+    %br
+    %tbody
+        - @shops.each do |shop|
+            %tr
+                %td= shop.name
+                %td= shop.address
+                %td= shop.phone_number

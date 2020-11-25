@@ -1,0 +1,6 @@
+%h1 Create a New Shop
+= simple_form_for(@shop, url: shops_path, method: :post) do |f|
+    = f.input :name, label: 'Your shop name'
+    = f.input :address
+    = f.input :phone_number
+    = f.button :submit
